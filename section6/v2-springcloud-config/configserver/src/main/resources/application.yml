@@ -2,13 +2,16 @@ spring:
   application:
     name: "configserver"
   profiles:
-    active: native
+    active: git
   cloud:
     config:
       server:
-        native:
-          # copy configuration folder to ~/fs-config
-          search-locations: "file:${user.home}//fs-config"
+        git:
+          uri: "https://github.com/szabolcspeter/EazyBank-config.git"
+          default-label: main
+          timeout: 5
+          clone-on-start: true
+          force-pull: true
 
 server:
   port: 8071
