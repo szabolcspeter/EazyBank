@@ -25,6 +25,15 @@ spring:
     username: "guest"
     password: "guest"
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+## command to run Hookdeck in Docker:
+# docker run --rm -it --add-host=host.docker.internal:host-gateway  hookdeck/hookdeck-cli listen host.docker.internal:8071  Source --cli-path /monitor
+
 encrypt:
   key: "45D81EC1EF61DF9AD8D3E5BB397F9"
 
