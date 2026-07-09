@@ -20,19 +20,6 @@ spring:
     show-sql: true
   config:
     import: "optional:configserver:http://localhost:8071/"
-  cloud:
-    bus:
-      destination: springCloudBus
-      id: "${spring.application.name}:${APP_INSTANCE_ID:${server.port}}"
-    stream:
-      bindings:
-        springCloudBusInput:
-          group: "${spring.application.name}-${APP_INSTANCE_ID:${server.port}}"
-  rabbitmq:
-    host: "localhost"
-    port: 5672
-    username: "guest"
-    password: "guest"
 
 management:
   endpoints:
